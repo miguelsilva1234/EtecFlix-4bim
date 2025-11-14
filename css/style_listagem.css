@@ -1,176 +1,193 @@
-/* ===== Fundo e base ===== */
+/* ========== VARIÁVEIS GERAIS (TEMA NETFLIX) ========== */
+:root {
+    --accent: #e50914;
+    --accent-hover: #f6121d;
+    --bg-dark: #000;
+    --bg-card: #141414;
+    --bg-light: #1a1a1a;
+    --text-muted: #b3b3b3;
+    --radius: 10px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== FUNDO GERAL ========== */
 body {
-    background-color: #00264d; /* azul mais equilibrado */
-    min-height: 100vh;
+    background: linear-gradient(135deg, #000 0%, #111 40%, #1a1a1a 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 15px;
-    margin: 0;
-    color: #222;
+    padding: 60px 20px;
 }
 
-/* ===== Container ===== */
+/* ========== CONTAINER CENTRAL ========== */
 .container {
-    background-color: #fff;
-    padding: 40px 50px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-    width: 900px;
-    max-width: 95vw;
-    height: auto;
-    margin: 40px auto;
-    overflow-y: auto;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    width: 95%;
+    max-width: 1200px;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    animation: fadeIn 0.4s ease;
 }
 
-.container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+/* animação leve */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Alertas ===== */
+/* ========== ALERTAS ========== */
 .alert {
-    padding: 12px 18px;
+    padding: 15px 20px;
+    background: #0f5132;
+    border-left: 4px solid #198754;
+    border-radius: var(--radius);
     margin-bottom: 25px;
-    border-radius: 8px;
     font-weight: 600;
-    font-size: 16px;
-}
-
-.alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+    color: #d1e7dd;
 }
 
 .alert-error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
+    background: #642227;
+    border-color: #b02a37;
+    color: #f8d7da;
 }
 
-/* ===== Tabela ===== */
-table.table {
+/* ========== TÍTULO ========== */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--accent);
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* ========== TABELA ========== */
+.table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 30px;
+    margin-top: 15px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: var(--radius);
 }
 
-table.table thead th {
-    background-color: #003366;
-    color: white;
-    padding: 14px 16px;
+/* Cabeçalho */
+.table thead {
+    background: #111;
+}
+
+.table thead th {
+    padding: 16px;
     text-align: left;
+    font-size: 15px;
+    text-transform: uppercase;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
-table.table tbody td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-    vertical-align: middle;
+/* Corpo da tabela */
+.table tbody tr {
+    background: var(--bg-light);
+    transition: background 0.25s;
 }
 
-table.table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+.table tbody tr:hover {
+    background: #222;
 }
 
-table.table tbody tr:hover {
-    background-color: #e9f2ff;
+.table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #333;
 }
 
-/* ===== Botões ===== */
+/* Imagem */
+.table img {
+    border-radius: 6px;
+    width: 80px;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* ========== BOTÕES PADRÃO ========== */
 .btn {
     padding: 10px 16px;
-    font-size: 15px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
+    border-radius: var(--radius);
     color: #fff;
+    font-weight: 700;
+    text-decoration: none;
     display: inline-block;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+    transition: 0.3s ease;
 }
 
+/* Botões */
 .btn-success {
-    background-color: #28a745;
+    background: var(--accent);
 }
 .btn-success:hover {
-    background-color: #1e7e34;
+    background: var(--accent-hover);
 }
 
 .btn-danger {
-    background-color: #dc3545;
+    background: #b00020;
 }
 .btn-danger:hover {
-    background-color: #a71d2a;
+    background: #e50914;
 }
 
 .btn-warning {
-    background-color: #ff9800;
-    color: #222;
+    background: #333;
+    color: #ddd;
 }
 .btn-warning:hover {
-    background-color: #cc7a00;
-    color: #fff;
+    background: #444;
 }
 
-/* ===== Botão de Voltar (único) ===== */
-.voltar {
-    display: inline-block;
-    margin-top: 25px;
-    background-color: #0066cc;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
+/* Botões agrupados */
+.btn-group {
+    display: flex;
+    gap: 10px;
 }
 
-.voltar:hover {
-    background-color: #004c99;
-    transform: translateY(-2px);
-}
-
-/* ===== Responsividade ===== */
-@media (max-width: 768px) {
-    .container {
-        padding: 25px 20px;
-    }
-
-    table.table thead {
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 820px) {
+    .table thead {
         display: none;
     }
 
-    table.table, table.table tbody, table.table tr, table.table td {
+    .table, .table tbody, .table tr, .table td {
         display: block;
         width: 100%;
     }
 
-    table.table tr {
+    .table tr {
         margin-bottom: 15px;
-        background: #f9f9f9;
-        border-radius: 10px;
+        background: #111;
         padding: 10px;
+        border-radius: var(--radius);
     }
 
-    table.table td {
+    .table td {
         text-align: right;
-        position: relative;
         padding-left: 50%;
+        position: relative;
     }
 
-    table.table td::before {
+    .table td::before {
         content: attr(data-label);
         position: absolute;
-        left: 10px;
-        width: 45%;
-        font-weight: 600;
+        left: 15px;
+        font-weight: 700;
+        color: var(--text-muted);
+        font-size: 14px;
         text-align: left;
     }
 }
