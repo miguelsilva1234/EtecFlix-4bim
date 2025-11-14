@@ -1,0 +1,150 @@
+/* parte do header */
+header {
+  background-color: black;  
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;           
+  font-weight: 700;           /* Negrito */
+  color: #fff;               
+  letter-spacing: 1px;       /* Pequeno espaçamento entre letras */
+  text-transform: uppercase; /* Letras maiúsculas */
+  transition: color 0.3s ease, transform 0.3s ease; /* Efeito suave */
+}
+
+.logo:hover {
+  color: red;           /* mudança de cor */
+  transform: scale(1.02);   /* crescimento */
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex; /* Alinha os itens horizontalmente */
+  gap: 15px;     /* Espaçamento entre os botões */
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #333;  /* Cor base */
+  transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Hover minimalista */
+.menu li a:hover {
+  background-color: #555;  /* Escurece levemente */
+  transform: translateY(-3px); /* Levanta um pouco */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+/*fecho o header*/
+
+
+html, body {
+    height: 100%;             
+    margin: 0;                
+    padding: 0;               
+}
+
+body {
+    background-image: url('../img/background.jpg');
+    background-size: cover;        
+    background-repeat: no-repeat;  
+    background-position: center;   
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    min-height: calc(100vh - 80px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* card */
+.card {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    width: 300px;
+    display: flex;
+    flex-direction: column; /* força ficar em coluna */
+    gap: 15px;              
+}
+
+/* h1 e h2 do card */
+.card h1 {
+    font-size: 2.5rem;   
+    margin: 0;
+    color: white;
+}
+
+.card h2 {
+    font-size: 1.2rem; 
+    margin: 5px 0 0 0;
+    color: white;      
+}
+
+/* Botão do card */
+.btn-group .btn {
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-group .btn:hover {
+    background-color: #b00610;
+}
+
+/*parte do rodape*/
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgb(0, 0, 0 ,0.1); /* fundo escuro */
+    color: #ccc;
+    font-size: 14px;
+    position: fixed ;  /* deixa fixo no fim da tela */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+/*fecho o rodape*/
+
+/*responsivo*/
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 24px;
+    }
+  
+    .menu li a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  
+    .movie-image {
+      height: 300px;
+    }
+  }
+  

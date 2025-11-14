@@ -1,0 +1,230 @@
+/* ====== HEADER ====== */
+header {
+    background-color: black;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .logo:hover {
+    color: #e50914;
+    transform: scale(1.05);
+  }
+  
+  /* Menu */
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #141414;
+    transition: all 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    background-color: #e50914;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
+  }
+  
+  /* ====== RESET ====== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ====== FUNDO GERAL ====== */
+  body {
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  /* ====== CONTAINER ====== */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+  }
+  
+  /* ====== CARD ====== */
+  .card {
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 16px;
+    padding: 50px 60px;
+    max-width: 1000px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ====== TÍTULO ====== */
+  .card h1 {
+    font-size: 2.4rem;
+    color: #e50914;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* ====== TEXTO ====== */
+  .card p {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+  }
+  
+  /* ====== INTEGRANTES ====== */
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .btn-group p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+/* Container principal */
+.integrantes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  text-align: center;
+  color: #fff;
+}
+
+/* Texto de título dentro da seção */
+.integrantes > p {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Cada integrante (bloco com imagem + nome) */
+.integrante {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagens quadradas */
+.integrante img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px; /* quadrado com cantos levemente arredondados */
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #e50914;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Nome abaixo da imagem */
+.integrante span {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Efeito hover na imagem */
+.integrante img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #e50914;
+}
+
+  
+  
+  /* ====== RODAPÉ ====== */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  /* ====== RESPONSIVIDADE ====== */
+  @media (max-width: 900px) {
+    .card {
+      padding: 40px 30px;
+    }
+  
+    .integrantes {
+      flex-wrap: wrap;
+    }
+  
+    .integrantes img {
+      width: 75px;
+      height: 75px;
+    }
+  
+    .logo {
+      font-size: 24px;
+    }
+  
+    .menu {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .menu li a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  }
+  

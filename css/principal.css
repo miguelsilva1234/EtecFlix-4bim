@@ -1,0 +1,257 @@
+/* -------------------------------------------
+   🌑 GERAL E ESTRUTURA BASE
+-------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 30px 5%;
+}
+
+/*parte do header*/
+header {
+  background-color: #000;
+  padding: 15px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #e50914;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  color: #ff2a2a;
+  transform: scale(1.05);
+}
+
+/* Menu com mais cor */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  background: #e50914;
+  color: #fff;
+}
+/*fecho o header*/
+
+
+.main-content h2 {
+  font-size: 1.8rem;
+  margin: 25px 0;
+  font-weight: bold;
+  position: relative;
+}
+
+.main-content {
+  background-color: black;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/*parte dos cards*/
+.movie-card {
+  position: relative;
+  border: 2px solid #e50914; /* borda vermelha */
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #000; /* fundo preto puro */
+  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.2);
+  text-align: center; /* centraliza o conteúdo interno */
+  padding-bottom: 20px;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(229, 9, 20, 0.4);
+  z-index: 2;
+}
+
+.movie-image img {
+  width: 100%;       /* ocupa toda a div */
+  height: auto;      /* mantém proporção */
+  border-radius: 8px; 
+  object-fit: cover; /* corta se necessário */
+}
+
+
+.movie-card:hover .movie-image {
+  filter: brightness(1.2) saturate(1.2);
+}
+
+/* Informações */
+.movie-info {
+  padding: 15px;
+  color: #fff;
+}
+
+.movie-info h3 {
+  margin: 10px 0 6px;
+  font-size: 1.1rem;
+}
+
+.movie-info p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.movie-card a {
+  display: block;                 
+  width: 120px;                   
+  margin: 10px auto 0 auto;       
+  background: linear-gradient(90deg, #e50914, #b0060f);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 0;                
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.movie-card a:hover {
+  background: linear-gradient(90deg, #ff0f1c, #d40810);
+  transform: scale(1.05);
+}
+
+/* Para garantir que o botão fique centralizado mesmo se mudar o conteúdo */
+.movie-card .movie-info,
+.movie-card a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/*fecho os cards*/
+
+/*parte do footer*/
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #000;
+  color: #aaa;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
+}
+/*fecho o footer*/
+
+/*responsivo*/
+@media (max-width: 768px) {
+  .logo {
+    font-size: 24px;
+  }
+
+  .menu {
+    gap: 15px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .movie-image {
+    height: 200px;
+  }
+}
+
+
+.empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 40px 20px;
+}
+
+.empty-state-content {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(229, 9, 20, 0.08), rgba(0, 0, 0, 0.2));
+  border: 2px solid rgba(229, 9, 20, 0.2);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 450px;
+  backdrop-filter: blur(10px);
+}
+
+.empty-state-content h3 {
+  font-size: 1.6rem;
+  color: #e50914;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.empty-state-content p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.btn-add-film {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #e50914, #b0060f);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add-film:hover {
+  background: linear-gradient(90deg, #ff0f1c, #d40810);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(229, 9, 20, 0.5);
+}
+

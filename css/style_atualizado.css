@@ -1,0 +1,86 @@
+/* Fundo azul escuro */
+body {
+    background-color: #003366;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+    margin: 0;
+}
+
+/* Container branco centralizado */
+.container {
+    background-color: #fff;
+    padding: 40px 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    width: 400px;
+    max-width: 95vw;
+    color: #222;
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    margin-bottom: 30px;
+    color: #003366;
+    font-weight: 700;
+}
+
+/* Inputs ocupando toda largura */
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+.mb-3 input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.mb-3 input[type="text"]:focus {
+    border-color: #003366;
+    outline: none;
+}
+
+/* Botões empilhados */
+.btn-primary,
+.btn-warning {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+/* Botão Atualizar */
+.btn-primary {
+    background-color: #003366;
+}
+
+.btn-primary:hover {
+    background-color: #002244;
+}
+
+/* Botão Voltar */
+.btn-warning {
+    background-color: #ff9800;
+    color: #222;
+}
+
+.btn-warning:hover {
+    background-color: #cc7a00;
+    color: #111;
+}

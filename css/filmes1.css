@@ -1,0 +1,259 @@
+/* ===== HEADER ===== */
+header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  color: #e50914;
+  transform: scale(1.05);
+}
+
+/* ===== BODY E FUNDO ===== */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top left, #0a0a0a 10%, #121212 40%, #000 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: conic-gradient(
+    from 0deg,
+    #e50914,
+    #ff007f,
+    #5f27cd,
+    #00d2d3,
+    #e50914
+  );
+  animation: spin 15s linear infinite;
+  filter: blur(180px);
+  opacity: 0.1;
+  z-index: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== MENU ===== */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.menu li a:hover,
+.menu li a.ativo {
+  color: #e50914;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.avaliacao-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 20px 80px;
+  width: 100%;
+}
+
+/* ===== CARD DO FILME ===== */
+.filme-card {
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.15);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filme-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.25);
+}
+
+.filme-capa {
+  width: 300px;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+}
+
+.filme-info {
+  padding: 25px;
+  flex: 1;
+}
+
+.filme-info h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 5px;
+}
+
+.sinopse {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+/* ===== AVALIAÇÃO ESTRELAS ===== */
+.avaliacao-estrelas {
+  font-size: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.estrela {
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.estrela:hover,
+.estrela.ativo {
+  color: #e50914;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+  width: 100%;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 15px;
+}
+
+textarea::placeholder {
+  color: #aaa;
+}
+
+/* ===== BOTÕES ===== */
+.btn-enviar,
+.btn-voltar {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-enviar:hover,
+.btn-voltar:hover {
+  background-color: #ff1a1a;
+  transform: scale(1.05);
+}
+
+/* ===== REVIEWS ===== */
+.reviews-section {
+  margin-top: 40px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.reviews-section h3 {
+  text-align: center;
+  color: #e50914;
+  margin-bottom: 20px;
+}
+
+.review {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 3px solid #e50914;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #bbb;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .filme-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filme-capa {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .filme-info {
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}

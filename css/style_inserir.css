@@ -1,0 +1,205 @@
+/* ===== CORES BASE - estilo Netflix ===== */
+:root {
+  --preto-fundo: #0b0b0b;
+  --vermelho-principal: #e50914;
+  --vermelho-hover: #b0060f;
+  --cinza-claro: #bfbfbf;
+  --cinza-escuro: #1a1a1a;
+}
+
+/* ===== ESTRUTURA GERAL ===== */
+body {
+  background-color: var(--preto-fundo);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 15px;
+  margin: 0;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
+  width: 900px;
+  max-width: 95vw;
+  padding: 40px 50px;
+  margin: 40px auto;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* animação leve ao passar o mouse */
+.container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
+}
+
+/* ===== ALERTAS ===== */
+.alert {
+  padding: 12px 18px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.alert-success {
+  color: #a6f3b5;
+  background-color: rgba(40, 120, 60, 0.12);
+  border: 1px solid rgba(40, 120, 60, 0.3);
+}
+
+.alert-error {
+  color: #ff9b9b;
+  background-color: rgba(200, 60, 60, 0.1);
+  border: 1px solid rgba(200, 60, 60, 0.25);
+}
+
+/* ===== TABELAS ===== */
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* cabeçalho */
+table.table thead th {
+  background-color: var(--vermelho-principal);
+  color: #fff;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* linhas */
+table.table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ddd;
+}
+
+table.table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* efeito hover */
+table.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* botão padrão vermelho */
+.btn-primary {
+  background: linear-gradient(90deg, var(--vermelho-principal), var(--vermelho-hover));
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* verde (salvar, sucesso) */
+.btn-success {
+  background-color: #28a745;
+}
+.btn-success:hover {
+  background-color: #1e7e34;
+}
+
+/* vermelho (excluir) */
+.btn-danger {
+  background-color: #dc3545;
+}
+.btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+/* laranja (editar) */
+.btn-warning {
+  background-color: #ff9800;
+  color: #222;
+}
+.btn-warning:hover {
+  background-color: #cc7a00;
+  color: #fff;
+}
+
+/* ===== BOTÃO DE VOLTAR ===== */
+.voltar {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: var(--cinza-escuro);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.voltar:hover {
+  background-color: var(--vermelho-principal);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  /* tabela em formato de bloco no celular */
+  table.table thead {
+    display: none;
+  }
+
+  table.table,
+  table.table tbody,
+  table.table tr,
+  table.table td {
+    display: block;
+    width: 100%;
+  }
+
+  table.table tr {
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  table.table td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  table.table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: 600;
+    text-align: left;
+    color: var(--cinza-claro);
+  }
+}

@@ -1,0 +1,172 @@
+/* Baseado em estiloexemplo.css */
+header {
+  background-color: black;  
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;           
+  font-weight: 700;
+  color: #fff;               
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  color: red;
+  transform: scale(1.02);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #555;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+html, body {
+    height: 100%;             
+    margin: 0;                
+    padding: 0;               
+}
+
+body {
+    background-image: url('/img/background.jpg');
+    background-size: cover;        
+    background-repeat: no-repeat;  
+    background-position: center;   
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    min-height: calc(100vh - 80px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;              
+}
+
+.card h1 {
+    font-size: 2.5rem;   
+    margin: 0;
+    color: white;
+}
+
+.card h2 {
+    font-size: 1.2rem; 
+    margin: 5px 0 0 0;
+    color: white;      
+}
+
+.btn-group .btn, .btn {
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-group .btn:hover, .btn:hover {
+    background-color: #b00610;
+}
+
+form {
+    width: 100%;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgb(0, 0, 0 ,0.1);
+    color: #ccc;
+    font-size: 14px;
+    position: fixed ;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .logo {
+      font-size: 24px;
+    }
+    .menu li a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    .card {
+        padding: 40px;
+        width: 95%;
+    }
+}
